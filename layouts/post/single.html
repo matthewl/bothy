@@ -1,0 +1,35 @@
+{{ define "main" }}
+<main>
+  <article class="h-entry post">
+    <header>
+      <a href="{{ .Permalink }}" class="u-url">
+        <time datetime='{{ .Date.Format "2006-01-02" }}' class="dt-published post-date">
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </a>
+      {{ if .Title }}
+      <h1 class="p-name">{{ .Title }}</h1>
+      {{ end }}
+    </header>
+
+    <section class="e-content">{{ .Content }}</section>
+
+    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
+    <aside class="categories">
+      {{- range . }}
+      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
+      {{- end }}
+    </aside>
+    {{- end }} {{- end }}
+
+    {{ if .Site.Params.include_conversation }}
+    <footer>
+      <script
+        type="text/javascript"
+        src="https://micro.blog/conversation.js?url={{ .Permalink }}"
+      ></script>
+    </footer>
+    {{ end }}
+  </article>
+</main>
+{{ end }}

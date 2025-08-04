@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main>
+  <article>
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    <section class="content">{{ .Content }}</section>
+
+    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
+    <aside class="categories">
+      {{- range . }}
+      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
+      {{- end }}
+    </aside>
+    {{- end }} {{- end }}
+  </article>
+</main>
+{{ end }}

@@ -1,0 +1,21 @@
+<header class="header-content">
+  {{ if .Site.Params.custom_avatar_url}}
+  <img
+    src="{{ .Site.Params.custom_avatar_url }}"
+    alt="{{ .Site.Title }} avatar"
+    class="site-avatar"
+  />
+  {{ else if .Site.Author.avatar }}
+  <img src="{{ .Site.Author.avatar }}" alt="{{ .Site.Title }} avatar" class="site-avatar" />
+  {{ end }}
+  <div class="header-text">
+    <h1 class="site-title">
+      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    </h1>
+    {{ if .Site.Params.description }}
+    <p class="site-description">{{ .Site.Params.description }}</p>
+    {{ end }}
+  </div>
+</header>
+
+<nav class="nav-container">{{- partial "nav.html" . -}}</nav>

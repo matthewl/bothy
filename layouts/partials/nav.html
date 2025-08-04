@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li><a class="nav-link underline-slide" href="{{ "/" | relURL }}">Home</a></li>
+    {{ range .Site.Menus.main }}
+    <li><a class="nav-link underline-slide" href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+    {{ with .Site.GetPage "/blog" }}
+    <li><a class="nav-link underline-slide" href="{{ "/blog" | relURL }}">Blog</a></li>
+    {{ end }}
+  </ul>
+</nav>

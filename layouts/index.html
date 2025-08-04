@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<main class="h-feed">
+  {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") }} {{ range
+  $paginator.Pages }}
+  <article class="h-entry post">
+    <header>
+      <a href="{{ .Permalink }}" class="u-url">
+        <time datetime='{{ .Date.Format "2006-01-02" }}' class="dt-published post-date">
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </a>
+    </header>
+    {{ if .Title }}
+    <h2 class="">
+      <a href="{{ .Permalink }}" class="p-name">{{ .Title }}</a>
+    </h2>
+    {{ end }}
+    <section class="e-content">{{ .Content }}</section>
+    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
+    <aside class="categories">
+      {{- range . }}
+      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
+      {{- end }}
+    </aside>
+    {{- end }} {{- end }}
+  </article>
+  {{ end }}
+</main>
+
+{{ end }}
