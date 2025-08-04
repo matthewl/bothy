@@ -4,7 +4,7 @@
 
 The Bothy theme is intended to be used with the Micro.blog platform.
 
-**Demo and Docs**: bothy.micro.blog
+**Demo and Docs**: [bothy.micro.blog](https://bothy.micro.blog)
 
 ## Credits
 
