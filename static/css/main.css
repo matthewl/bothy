@@ -11,15 +11,17 @@
   --spacing-xl: 2rem;
   --spacing-xxl: 3rem;
 
-  --accent-color: #4b5563;
-  --accent-hover: #374151;
-  --accent-light: rgba(75, 85, 99, 0.15);
+  --primary-color: #333;
+  --secondary-color: #666;
+
+  --background-color: #fafafa;
+  --background-subtle: rgba(229, 231, 235, 0.3);
+
   --border-light: #e5e7eb;
   --border-medium: #d1d5db;
-  --background-subtle: rgba(229, 231, 235, 0.3);
+
   --shadow-light: rgba(75, 85, 99, 0.1);
   --shadow-medium: rgba(75, 85, 99, 0.2);
-  --background-color: #fafafa;
 }
 
 /* ============================
@@ -48,7 +50,7 @@
    ============================ */
 body {
   background-color: var(--background-color);
-  color: #333;
+  color: var(--primary-color);
   font-family: var(--font-family);
   font-size: 18px;
   line-height: 1.6;
@@ -68,7 +70,7 @@ main {
 
 footer {
   text-align: center;
-  color: #666;
+  color:
   font-size: 0.9rem;
 }
 
@@ -85,7 +87,7 @@ footer {
 
 .site-avatar {
   border-radius: 50%;
-  border: 3px solid var(--accent-color);
+  border: 3px solid var(--primary-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
   height: 70px;
@@ -111,20 +113,15 @@ footer {
 
 .site-title a {
   text-decoration: none;
-  color: #333;
+  color: var(--primary-color);
   transition: color 0.2s ease;
 }
 
-.site-title a:hover {
-  color: var(--accent-color);
-}
-
 .site-description {
-  color: #333;
+  color: var(--secondary-color);
   font-size: 1.25rem;
   line-height: 1.4;
   margin: 0;
-  opacity: 0.8;
   padding-top: var(--spacing-sm);
 }
 
@@ -159,7 +156,7 @@ nav ul li {
 }
 
 .underline-slide {
-  color: #333;
+  color: var(--primary-color);
   font-weight: bold;
   padding: 0.5rem 0;
 }
@@ -171,7 +168,7 @@ nav ul li {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #4b5563, #374151);
+  background: linear-gradient(90deg, var(--primary-color), );
   transition: width 0.3s ease;
 }
 
@@ -183,8 +180,9 @@ nav ul li {
    POSTS & ARTICLES
    ============================ */
 .post {
+  border-bottom: 3px solid var(--border-light);
   margin-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--border-light);
+  padding-bottom: var(--spacing-lg);
 }
 
 .post:last-child {
@@ -199,7 +197,7 @@ nav ul li {
 }
 
 .post-date {
-  color: #666;
+  color:
   font-size: 0.85rem;
   font-weight: bold;
   position: relative;
@@ -219,7 +217,7 @@ nav ul li {
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #4b5563, #374151);
+  background: linear-gradient(90deg, var(--primary-color), );
   transition: width 0.3s ease;
 }
 
@@ -270,7 +268,7 @@ nav ul li {
   left: 0;
   width: 0;
   height: 1px;
-  background: linear-gradient(90deg, #4b5563, #374151);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   transition: width 0.3s ease;
 }
 
@@ -331,7 +329,7 @@ blockquote {
   border-left: 4px solid #374151;
   background: transparent;
   font-style: italic;
-  color: #666;
+  color: var(--secondary-color);
   font-size: 1.05em;
 }
 
@@ -342,7 +340,8 @@ img {
   max-width: 100%;
   height: auto;
   margin: var(--spacing-sm) 0;
-  border-radius: 8px;
+  border-radius: 3px;
+  border: var(--secondary-color) solid 3px;
 }
 
 /* ============================
@@ -377,14 +376,14 @@ pre code {
 }
 
 .categories a {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   text-decoration: none;
   font-size: 0.8rem;
   transition: color 0.2s ease;
 }
 
 .categories a:hover {
-  color: var(--accent-hover);
+  color: var(--primary-color-color);
 }
 
 /* ============================
@@ -397,35 +396,35 @@ pre code {
 
 .external-link a,
 .reply-context a {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .external-link a:hover,
 .reply-context a:hover {
-  color: var(--accent-hover);
+  color: var(--primary-color);
 }
 
 .content a {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   text-decoration: underline;
-  text-decoration-color: var(--accent-light);
+  text-decoration-color: var(--secondary-color);
   transition: all 0.2s ease;
 }
 
 .content a:hover {
-  color: var(--accent-hover);
-  text-decoration-color: var(--accent-hover);
+  color: var(--primary-color);
+  text-decoration-color: var(--primary-color);
 }
 
 .read-more {
-  color: var(--accent-color);
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .read-more:hover {
-  color: var(--accent-hover);
+  color: var(--primary-hover);
 }
