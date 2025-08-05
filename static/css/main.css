@@ -171,7 +171,7 @@ nav ul li {
    POSTS & ARTICLES
    ============================ */
 .post {
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
 }
@@ -326,8 +326,8 @@ blockquote {
 /* ============================
    IMAGES & MEDIA
    ============================ */
-.content img,
-.post img {
+.content img:not(.microblog_avatar),
+.post img:not(.microblog_avatar) {
   width: 100%;
   height: auto;
   margin: var(--spacing-sm) 0;
@@ -440,6 +440,90 @@ pre code {
 
 .read-more:hover {
   color: var(--primary-hover);
+}
+
+/* ============================
+   MICRO.BLOG CONVERSATION
+   ============================ */
+.microblog_conversation {
+  border-top: 1px solid var(--border-color);
+  margin: var(--spacing-lg) 0 !important;
+  padding-top: var(--spacing-lg);
+}
+
+.microblog_post {
+  margin-bottom: var(--spacing-md) !important;
+  padding: var(--spacing-md) !important;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.microblog_post:last-child {
+  margin-bottom: 0;
+}
+
+.microblog_user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.microblog_avatar {
+  max-width: 30px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--primary-color) !important;
+  box-shadow: 0 2px 8px var(--shadow-medium) !important;
+  flex-shrink: 0 !important;
+  object-fit: cover !important;
+}
+
+.microblog_fullname {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.microblog_text {
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.microblog_text p {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.microblog_text a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+  text-decoration-color: var(--secondary-color);
+  transition: all 0.2s ease;
+}
+
+.microblog_text a:hover {
+  color: var(--primary-color);
+  text-decoration-color: var(--primary-color);
+}
+
+.microblog_time {
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  text-align: left;
+  margin-top: var(--spacing-md);
+}
+
+.microblog_time a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.microblog_time a:hover {
+  color: var(--primary-color);
 }
 
 /* ============================
