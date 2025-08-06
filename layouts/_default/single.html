@@ -5,7 +5,7 @@
       <h1>{{ .Title }}</h1>
     </header>
 
-    <section class="content">{{ .Content }}</section>
+    <section class="content post">{{ .Content }}</section>
 
     {{- if .Params.categories }} {{- with .GetTerms "categories" }}
     <aside class="categories">
