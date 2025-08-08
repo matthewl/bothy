@@ -1,11 +1,11 @@
 {{ define "main" }}
 <main>
-  <article>
+  <article class="post">
     <header>
-      <h1>{{ .Title }}</h1>
+      <h2>{{ .Title }}</h2>
     </header>
 
-    <section class="content post">{{ .Content }}</section>
+    <section class="content">{{ .Content }}</section>
 
     {{- if .Params.categories }} {{- with .GetTerms "categories" }}
     <aside class="categories">

@@ -1,14 +1,14 @@
 {{ define "main" }}
 <main>
   <article class="h-entry post">
-    <header>
+    <header class="post-header">
       <a href="{{ .Permalink }}" class="u-url">
         <time datetime='{{ .Date.Format "2006-01-02" }}' class="dt-published post-date">
           {{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}
         </time>
       </a>
       {{ if .Title }}
-      <h1 class="p-name">{{ .Title }}</h1>
+      <h2 class="p-name">{{ .Title }}</h2>
       {{ end }}
     </header>
 

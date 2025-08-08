@@ -28,24 +28,13 @@
         </svg>
       </span>
     </label>
+    <div class="color-theme-switcher">
+      <button class="color-theme-button" id="color-theme-button" aria-label="Switch color theme">
+      </button>
+    </div>
   </div>
 </header>
 
 {{- partial "nav.html" . -}}
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const themeSwitch = document.getElementById('theme-switch');
-  const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  
-  if (currentTheme === 'dark') {
-    themeSwitch.checked = true;
-  }
-  
-  themeSwitch.addEventListener('change', function() {
-    const theme = this.checked ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  });
-});
-</script>
+<script src="{{ "js/theme-switcher.js" | relURL }}" defer></script>
