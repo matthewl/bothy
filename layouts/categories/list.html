@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+<main class="h-feed">
+  <header class="category-header">
+    <h2>{{ .Title | safeHTML }}</h2>
+    {{- with .Content }} {{ . | safeHTML }} {{- end }}
+  </header>
+
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse }} {{ range
+  $paginator.Pages }}
+  <article class="h-entry post">
+    <header class="post-header">
+      <a href="{{ .Permalink }}" class="u-url">
+        <time datetime='{{ .Date.Format "2006-01-02" }}' class="dt-published post-date">
+          {{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </a>
+      {{ if .Title }}
+      <h2>
+        <a href="{{ .Permalink }}" class="p-name">{{ .Title }}</a>
+      </h2>
+      {{ end }}
+    </header>
+    <section class="e-content">{{ .Content }}</section>
+    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
+    <aside class="categories">
+      {{- range . }}
+      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
+      {{- end }}
+    </aside>
+    {{- end }} {{- end }}
+  </article>
+  {{ end }}
+
+  <div class="pagination">
+    {{ if $paginator.HasPrev }}
+    <span class="prev">
+      <a href="{{ $paginator.Prev.URL }}" title="Previous Page"
+        ><span class="arrow">← Newer Posts</span></a
+      >
+    </span>
+    {{ end }} {{ if $paginator.HasNext }}
+    <span class="next">
+      <a href="{{ $paginator.Next.URL }}"><span class="arrow">Older Posts →</span></a>
+    </span>
+    {{ end }}
+  </div>
+</main>
+
+{{ end }}
