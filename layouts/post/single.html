@@ -14,13 +14,7 @@
 
     <section class="e-content">{{ .Content }}</section>
 
-    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
-    <aside class="categories">
-      {{- range . }}
-      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
-      {{- end }}
-    </aside>
-    {{- end }} {{- end }} {{ if .Site.Params.include_conversation }}
+    {{ partial "categories.html" . }} {{ if .Site.Params.include_conversation }}
     <footer>
       <script
         type="text/javascript"

@@ -7,13 +7,7 @@
 
     <section class="content">{{ .Content }}</section>
 
-    {{- if .Params.categories }} {{- with .GetTerms "categories" }}
-    <aside class="categories">
-      {{- range . }}
-      <a href="{{ .RelPermalink }}" class="category">{{ .LinkTitle }}</a>
-      {{- end }}
-    </aside>
-    {{- end }} {{- end }}
+    {{ partial "categories.html" . }}
   </article>
 </main>
 {{ end }}

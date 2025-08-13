@@ -546,7 +546,6 @@ nav ul li {
   transition: color 0.3s ease;
 }
 
-.post h1,
 .post h2 {
   margin: 0;
   font-size: 1.3rem;
@@ -592,6 +591,15 @@ nav ul li {
   flex-shrink: 0;
 }
 
+.p-summary {
+  font-style: italic;
+  color: var(--secondary-color);
+  font-size: 0.95em;
+  border-top: 1px dotted var(--border-color);
+  border-bottom: 1px dotted var(--border-color);
+  margin: var(--spacing-md) 0;
+}
+
 /* ============================
    CONTENT STYLES
    ============================ */
@@ -608,12 +616,12 @@ nav ul li {
 }
 
 .content p {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
 }
 
 .content ul,
 .content ol {
-  margin-bottom: var(--spacing-sm);
+  margin: var(--spacing-lg) 0;
   padding-left: var(--spacing-lg);
 }
 
@@ -632,6 +640,12 @@ blockquote {
   font-size: 1.05em;
 }
 
+hr {
+  margin: var(--spacing-lg) 0;
+  border: none;
+  border-top: 1px solid var(--secondary-color);
+}
+
 /* ============================
    IMAGES & MEDIA
    ============================ */
@@ -640,12 +654,7 @@ blockquote {
   width: 100%;
   height: auto;
   margin: var(--spacing-sm) 0;
-  border-radius: 2px;
-  border: var(--secondary-color) solid 2px;
-}
-
-.photos-grid-item img {
-  border: none;
+  border-radius: 6px;
 }
 
 .microblog_collection {
@@ -659,11 +668,11 @@ blockquote {
 }
 
 .microblog_collection img {
-  border: none;
   width: 100% !important;
   height: 200px !important; /* Fixed height */
   object-fit: cover; /* Ensures the image fills its area without distortion */
   display: block;
+  border-radius: 6px;
 }
 
 /* ============================
@@ -703,7 +712,7 @@ pre code {
 
 .categories {
   margin: 0;
-  text-transform: uppercase;
+  text-align: right;
 }
 
 .categories a {

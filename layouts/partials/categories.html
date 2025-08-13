@@ -1,0 +1,5 @@
+{{- if .Params.categories }} {{- with .GetTerms "categories" }}
+<aside class="categories">
+  {{- range $index, $category := . }}{{ if $index }}, {{ end }}<a href="{{ $category.RelPermalink }}" class="category">{{ $category.LinkTitle }}</a>{{- end }}
+</aside>
+{{- end }} {{- end }}
