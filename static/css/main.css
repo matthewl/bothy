@@ -625,12 +625,26 @@ nav ul li {
 }
 
 .p-summary {
-  font-style: italic;
-  color: var(--secondary-color);
-  font-size: 0.95em;
-  border-top: 1px dotted var(--border-color);
-  border-bottom: 1px dotted var(--border-color);
+  border-left: 3px solid var(--accent-color);
+  padding-left: var(--spacing-md);
   margin: var(--spacing-md) 0;
+  color: var(--secondary-color);
+  font-style: normal;
+}
+
+.p-summary p:first-of-type::first-line {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Dark theme adjustment */
+[data-theme="dark"] .p-summary {
+  color: var(--secondary-color); /* already lighter */
+  border-left-color: var(--theme-color-dark); /* slightly brighter accent */
+}
+
+[data-theme="dark"] .p-summary p:first-of-type::first-line {
+  color: var(--primary-color); /* remains readable highlight */
 }
 
 /* ============================
