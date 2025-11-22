@@ -696,8 +696,7 @@ hr {
 /* ============================
    IMAGES & MEDIA
    ============================ */
-.content img:not(.microblog_avatar),
-.post img:not(.microblog_avatar) {
+:where(.content, .post) img:not(.microblog_avatar) {
   width: 100%;
   height: auto;
   margin: var(--spacing-sm) 0;
