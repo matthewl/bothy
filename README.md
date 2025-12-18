@@ -2,7 +2,9 @@
 
 ## Description
 
-The Bothy theme is intended to be used with the Micro.blog platform.
+The Bothy theme is intended for use with the Micro.blog platform.
+
+![Bothy Theme Screenshot](screenshot.png)
 
 **Demo and Docs**: [bothy.micro.blog](https://bothy.micro.blog)
 
